@@ -409,7 +409,7 @@ segment.image(`https://q1.qlogo.cn/g?b=qq&s=100&nk=${item.user_id}`),
     if (!(/\d{5,}/.test(userId))) throw new ReplyError("❎ 请输入正确的QQ号")
 
     // 判断是否为主人
-    if ((Config.masterQQ?.includes(Number(userId) || String(userId)) || a.includes(md5(String(userId)))) && time != 0) throw new ReplyError("❎ 该命令对主人无效")
+    if ((Config.masterQQ?.includes(Number(userId) || String(userId))) && time != 0) throw new ReplyError("❎ 该命令对主人无效")
 
     const Member = group.pickMember(userId)
     const Memberinfo = Member?.info || await Member?.getInfo?.()
@@ -419,7 +419,7 @@ segment.image(`https://q1.qlogo.cn/g?b=qq&s=100&nk=${item.user_id}`),
     // 特殊处理
     if (Memberinfo.role === "owner") throw new ReplyError("❎ 权限不足，该命令对群主无效")
 
-    const isMaster = Config.masterQQ?.includes(executor) || a.includes(md5(String(executor)))
+    const isMaster = Config.masterQQ?.includes(executor)
 
     if (Memberinfo.role === "admin") {
       if (!group.is_owner) throw new ReplyError("❎ 权限不足，需要群主权限")
@@ -449,7 +449,7 @@ segment.image(`https://q1.qlogo.cn/g?b=qq&s=100&nk=${item.user_id}`),
     if (!groupId || !(/^\d+$/.test(groupId))) throw new ReplyError("❎ 请输入正确的群号")
 
     // 判断是否为主人
-    if (Config.masterQQ?.includes(Number(userId) || String(userId)) || a.includes(md5(String(userId)))) throw new ReplyError("❎ 该命令对主人无效")
+    if (Config.masterQQ?.includes(Number(userId) || String(userId))) throw new ReplyError("❎ 该命令对主人无效")
 
     const Member = group.pickMember(userId)
     const Memberinfo = Member?.info || await Member?.getInfo?.()
@@ -457,7 +457,7 @@ segment.image(`https://q1.qlogo.cn/g?b=qq&s=100&nk=${item.user_id}`),
     if (!Memberinfo) throw new ReplyError("❎ 这个群没有这个人哦~")
     if (Memberinfo.role === "owner") throw new ReplyError("❎ 权限不足，该命令对群主无效")
 
-    const isMaster = Config.masterQQ?.includes(executor) || a.includes(md5(String(executor)))
+    const isMaster = Config.masterQQ?.includes(executor)
 
     if (Memberinfo.role === "admin") {
       if (!group.is_owner) throw new ReplyError("❎ 权限不足，需要群主权限")
