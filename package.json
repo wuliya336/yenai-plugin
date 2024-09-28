@@ -1,0 +1,49 @@
+{
+  "name": "yenai-plguin",
+  "version": "1.4.0",
+  "description": "Yunzai-Bot插件扩展",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "lint": "lint-staged --allow-empty",
+    "commit": "gitmoji --commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/yeyang52/yenai-plugin.git"
+  },
+  "keywords": [
+    "Yunzai-Bot",
+    "yenai-plguin"
+  ],
+  "author": "yeyang",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "colorthief": "^2.4.0",
+    "jimp": "^0.22.12",
+    "node-fetch": "^3.3.2",
+    "systeminformation": "^5.23.5"
+  },
+  "devDependencies": {
+    "all-contributors-cli": "^6.26.1",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsdoc": "^48.11.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "gitmoji-cli": "^9.4.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  },
+  "optionalDependencies": {
+    "abort-controller": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}
