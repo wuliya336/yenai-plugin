@@ -1,7 +1,7 @@
 import { Config } from "../../components/index.js"
 import moment from "moment"
 import request from "../../lib/request/request.js"
-import md5 from "md5"
+
 
 const CLIENT_ID = "MOBrBDS8blbauoSck0ZfDbtuzpyT"
 const CLIENT_SECRET = "lsACyCD94FhDUtGTXi3QzcFE2uU1hqtDaKeqrdwj"
